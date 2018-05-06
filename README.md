@@ -1,5 +1,4 @@
 # react-ssr-cnode
-React开发的服务端渲染cnode社区
 
 #### 项目介绍
 React开发的服务端渲染cnode社区
@@ -8,13 +7,13 @@ React开发的服务端渲染cnode社区
 react + react-router + mobx + koa
 
 #### 预览地址
-<a href="https://liuyao.info/">预览</a>
+<a href="https://liuyao.info/" target="_blank">预览</a>
 
 #### 安装教程
 
 1. npm install
-2. xxxx
-3. xxxx
+2. npm run build
+3. npm start
 
 #### 使用说明
 
