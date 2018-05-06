@@ -5,11 +5,11 @@ React开发的服务端渲染cnode社区
 React开发的服务端渲染cnode社区
 
 #### 软件架构
-react + react-router + mobx + express
+react + react-router + mobx + koa
 
 #### 安装教程
 
-1. npm i
+1. npm install
 2. xxxx
 3. xxxx
 

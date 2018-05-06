@@ -6,14 +6,14 @@ function resolve(dir) {
 }
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     app: path.join(__dirname, '../client/app.js')
   },
   output: {
     filename: '[name].[hash].js',
     path: path.join(__dirname, '../dist'),
-    publicPath: ''
+    publicPath: '/public'
   },
   module: {
     rules: [
@@ -25,6 +25,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new HTMLWebpackPlugin()
+    new HTMLWebpackPlugin({
+      template: path.join(__dirname, '../client/template.html')
+    })
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "apps": [
+    {
+      "name": "Website",
+      "script": "app.js",
+      "env_production" : {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "liuyao",
+      "host": ["193.112.139.230"],
+      "ref": "origin/master",
+      "repo": "git@github.com:happystory/react-ssr-cnode.git",
+      "path": "/home/liuyao",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "post-deploy": "npm i && pm2 startOrRestart ecosystem.json --env production",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
