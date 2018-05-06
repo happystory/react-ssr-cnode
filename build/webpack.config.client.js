@@ -6,7 +6,7 @@ function resolve(dir) {
 }
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     app: path.join(__dirname, '../client/app.js')
   },

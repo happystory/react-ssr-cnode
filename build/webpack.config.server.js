@@ -9,7 +9,7 @@ module.exports = {
   // 默认编译为类浏览器环境里可用
   // https://doc.webpack-china.org/configuration/target/#target
   target: 'node',
-  mode: 'development',
+  mode: 'production',
   entry: {
     app: path.join(__dirname, '../client/server-entry.js')
   },
