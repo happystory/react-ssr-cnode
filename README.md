@@ -17,9 +17,8 @@ react + react-router + mobx + koa
 
 #### 主要特性
 
-1. 客户端热更新
-2. xxxx
-3. xxxx
+1. SSR
+2. 热更新支持
 
 #### 使用说明
 
