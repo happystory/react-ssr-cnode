@@ -16,7 +16,8 @@ const config  = {
   output: {
     filename: '[name].[hash].js',
     path: path.join(__dirname, '../dist'),
-    publicPath: '/public'
+    // 防止HMR路径错误
+    publicPath: '/public/'
   },
   module: {
     rules: [
