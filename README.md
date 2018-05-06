@@ -7,6 +7,9 @@ React开发的服务端渲染cnode社区
 #### 软件架构
 react + react-router + mobx + koa
 
+#### 预览地址
+https://liuyao.info/
+
 #### 安装教程
 
 1. npm install
