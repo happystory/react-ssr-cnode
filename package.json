@@ -4,11 +4,11 @@
   "description": "react cnode",
   "main": "index.js",
   "scripts": {
-    "build:client": "webpack --config build/webpack.config.client.js",
-    "build:server": "webpack --config build/webpack.config.server.js",
+    "build:client": "npx webpack --config build/webpack.config.client.js",
+    "build:server": "npx webpack --config build/webpack.config.server.js",
     "clear": "npx rimraf dist",
     "build": "npm run clear && npm run build:client && npm run build:server",
-    "start": "nodemon server/server.js"
+    "start": "npx nodemon server/server.js"
   },
   "repository": {
     "type": "git",
