@@ -6,7 +6,7 @@
   "scripts": {
     "build:client": "webpack --config build/webpack.config.client.js",
     "build:server": "webpack --config build/webpack.config.server.js",
-    "clear": "rimraf dist",
+    "clear": "npx rimraf dist",
     "build": "npm run clear && npm run build:client && npm run build:server",
     "start": "nodemon server/server.js"
   },
