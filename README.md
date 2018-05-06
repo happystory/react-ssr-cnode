@@ -8,7 +8,7 @@ React开发的服务端渲染cnode社区
 react + react-router + mobx + koa
 
 #### 预览地址
-https://liuyao.info/
+[预览](https://liuyao.info/){:target="_blank"}
 
 #### 安装教程
 
