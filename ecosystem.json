@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "Website",
-      "script": "app.js",
+      "script": "server/app.js",
       "env_production" : {
         "NODE_ENV": "production"
       }
