@@ -1,14 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-
-function resolve(dir) {
-  return path.join(__dirname, '../', dir)
-}
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.config.base')
 
 const isDev = process.env.NODE_ENV === 'development'
 
-const config  = {
+const config = merge(baseConfig, {
   mode: 'production',
   entry: {
     app: path.join(__dirname, '../client/app.js')
@@ -19,32 +17,14 @@ const config  = {
     // 防止HMR路径错误
     publicPath: '/public/'
   },
-  module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|jsx)$/,
-        loader: 'eslint-loader',
-        include: [resolve('client')],
-        options: {
-          formatter: require('eslint-friendly-formatter'),
-          emitWarning: true
-        }
-      },
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
-        include: [resolve('client')]
-      }
-    ]
-  },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.join(__dirname, '../client/template.html')
+      template: path.join(__dirname, '../client/template.html'),
+      // favicon: path.join(__dirname, '../favicon.ico')
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
-}
+})
 
 if (isDev) {
   config.mode = 'development'

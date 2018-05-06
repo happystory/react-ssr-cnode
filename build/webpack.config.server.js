@@ -1,10 +1,8 @@
 const path = require('path')
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.config.base')
 
-function resolve(dir) {
-  return path.join(__dirname, '../', dir)
-}
-
-module.exports = {
+module.exports = merge(baseConfig, {
   // 编译为类 Node.js 环境可用（使用 Node.js require 加载 chunk）
   // 默认编译为类浏览器环境里可用
   // https://doc.webpack-china.org/configuration/target/#target
@@ -19,24 +17,5 @@ module.exports = {
     // 入口起点的返回值将分配给 module.exports 对象
     // https://doc.webpack-china.org/configuration/output/#output-librarytarget
     libraryTarget: 'commonjs2'
-  },
-  module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|jsx)$/,
-        loader: 'eslint-loader',
-        include: [resolve('client')],
-        options: {
-          formatter: require('eslint-friendly-formatter'),
-          emitWarning: true
-        }
-      },
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
-        include: [resolve('client')]
-      }
-    ]
   }
-}
+})
