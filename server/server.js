@@ -16,7 +16,7 @@ app.use(mount('/public', serve(path.join(__dirname, '../dist'))))
 
 app.use(async ctx => {
   const appString = ReactSSR.renderToString(serverEntry)
-  const resBody = template.replace('<app></app>', appString)
+  const resBody = template.replace('<!-- app -->', appString)
   ctx.body = resBody
 })
 

@@ -1,9 +1,12 @@
 import React from 'react'
+import { hot } from 'react-hot-loader'
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
-      <div>This is app</div>
+      <div>This is app4</div>
     )
   }
 }
+
+export default hot(module)(App)

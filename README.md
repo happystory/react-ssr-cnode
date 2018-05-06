@@ -15,6 +15,12 @@ react + react-router + mobx + koa
 2. npm run build
 3. npm start
 
+#### 主要特性
+
+1. 客户端热更新
+2. xxxx
+3. xxxx
+
 #### 使用说明
 
 1. xxxx
