@@ -5,6 +5,9 @@ function resolve(dir) {
 }
 
 module.exports = {
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
+  },
   module: {
     rules: [
       {
