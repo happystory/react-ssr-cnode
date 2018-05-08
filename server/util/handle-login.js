@@ -6,16 +6,19 @@ const baseUrl = 'http://cnodejs.org/api/v1'
 
 router.post('/login', async (ctx, next) => {
   try {
+    const accessToken = ctx.request.body.accessToken
     const resp = await axios.post(`${baseUrl}/accesstoken`, {
-      accesstoken: ctx.body.accessToken
+      accesstoken: accessToken
     })
     if (resp.status === 200 && resp.data.success) {
+      const { loginname, id, avatar_url } = resp.data
       ctx.session.user = {
-        accessToken: ctx.body.accessToken,
-        loginName: resp.data.loginname,
-        id: resp.data.id,
-        avatarUrl: resp.data.avatar_url
+        accessToken: accessToken,
+        loginName: loginname,
+        id,
+        avatarUrl: avatar_url
       }
+
       ctx.body = {
         success: true,
         data: resp.data
@@ -23,9 +26,9 @@ router.post('/login', async (ctx, next) => {
     }
   } catch (err) {
     if (err.response) {
-      res.body = {
+      ctx.body = {
         success: false,
-        data: err.response
+        data: err.response.data
       }
     } else {
       ctx.body = 'error'
